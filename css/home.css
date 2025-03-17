@@ -1,0 +1,70 @@
+@import url("theme.css");
+
+header {
+    margin: 0 15px;
+    margin-top: 25px;
+    padding: 35px 40px;
+    border-radius: 12px;
+    background: var(--card);
+    overflow: hidden;
+    display: flex;
+}
+
+header .start {
+    width: 70%
+}
+
+header .end {
+    display: flex;
+    width: 464px;
+    height: 100%;
+    column-gap: 24px;
+    overflow: hidden;
+}
+
+header .end .images {
+    position: absolute;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 16px;
+}
+
+header .end .images {
+    position: absolute;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 16px;
+}
+
+header .end .images:last-child {
+    translate: 110% -15%;
+}
+
+
+
+
+.box {
+    padding: 1em !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px !important;
+}
+
+.features {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature .icon {
+    font-size: 1.5em;
+}

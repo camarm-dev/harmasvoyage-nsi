@@ -1,0 +1,22 @@
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('https://fonts.cdnfonts.com/css/br-cobane');
+
+@font-face {
+    src: url("tt-hoves-variable.woff2");
+    font-family: "TT Hoves";
+}
+
+:root {
+    --background: #fff;
+    --text: #000;
+    --card: #f0f3f5;
+    --bulma-body-family: "TT Hoves", sans-serif !important;
+    --bulma-primary: #f45500;
+    --bulma-primary-h: 21deg;
+    --bulma-primary-s: 100%;
+    --bulma-primary-l: 48%;
+}
+
+.title {
+    --bulma-title-weight: 700 !important;
+}
