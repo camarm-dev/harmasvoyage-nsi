@@ -14,4 +14,5 @@
 - carte interactive 
 - mettre une destinationen favoris 
 - commender le billet
-- mettre des photo des destination 
+- mettre des photo des destination
+- faire un dictonnaire d'image pour des desination 
