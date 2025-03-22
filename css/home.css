@@ -69,10 +69,16 @@ header .end .images img {
     display: flex;
     flex-direction: row;
     gap: 1em;
+    margin-bottom: 1em;
 }
 
 .feature {
     text-align: center;
+}
+
+.feature.active .box {
+    background: var(--active-background);
+    color: var(--background)
 }
 
 .feature .icon {
