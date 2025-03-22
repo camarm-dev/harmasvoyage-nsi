@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/home.css"/>
+    <link rel="icon" href="img/favicon.png"/>
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
-            <img src="img/logo3d.png" alt="LOGO">
+            <img src="img/logo.png" alt="LOGO">
           </a>
-      
+
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -22,7 +23,7 @@
             <span aria-hidden="true"></span>
           </a>
         </div>
-      
+
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
             <div class="navbar-item">
@@ -33,7 +34,10 @@
                   </span>
                 </a>
                 <a class="button is-light">
-                  Connexion
+                  <span class="icon">
+                    <i class="fas fa-user-circle"></i>
+                  </span>
+                  <span>Connexion</span>
                 </a>
               </div>
             </div>
@@ -43,9 +47,9 @@
     <header>
         <div class="start">
             <h1 class="title is-bold is-1">Découvrez les saveurs du monde et bookez vos voyages<span class="has-text-primary">.</span></h1>
-            <p class="subtitle">Harmas tes valises !</p>
+            <p class="subtitle mt-4">Harmas tes valises et c'est parti pour des voyages en sah !</p>
             <div class="features">
-                <div class="feature">
+                <div class="feature active">
                     <div class="box is-small">
                         <span class="icon">
                             <i class="fas fa-plane"></i>
@@ -70,7 +74,14 @@
                     <p>Marathon</p>
                 </div>
             </div>
-            <div class="searchbar"></div>
+            <div class="searchbar">
+              <input placeholder="Rechercher un lieu" >
+              <a class="button is-primary is-gradient">
+                <span class="icon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </a>
+            </div>
         </div>
         <div class="end">
             <div class="images">
@@ -81,5 +92,6 @@
             </div>
         </div>
     </header>
+    <section></section>
 </body>
 </html>
