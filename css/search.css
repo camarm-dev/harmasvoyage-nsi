@@ -70,11 +70,11 @@
     border-top-right-radius: 6px;
     transition: .2s ease-in-out;
     height: 172px;
-    max-width: 125%;
+    max-width: 110%;
 }
 
 .card:hover img {
-    width: 125%;
+    width: 110%;
 }
 
 .card header, .card .content {
