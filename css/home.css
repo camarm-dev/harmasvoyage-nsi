@@ -8,18 +8,21 @@ header {
     background: var(--card);
     overflow: hidden;
     display: flex;
+    justify-content: center;
 }
 
 header .start {
-    width: 70%
+    width: 70%;
+    max-width: 900px;
 }
 
 header .end {
     display: flex;
     width: 464px;
-    height: 100%;
+    min-height: 20em;
+    max-height: 20em;
     column-gap: 24px;
-    overflow: hidden;
+    translate: 35px;
 }
 
 header .end .images {
@@ -32,20 +35,27 @@ header .end .images {
 }
 
 header .end .images {
-    position: absolute;
+    position: relative;
     height: 100%;
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     row-gap: 16px;
 }
+
+header .end .images:first-child {
+    translate: 0 -30%;
+}
+
 
 header .end .images:last-child {
-    translate: 110% -15%;
+    translate: 10% -15%;
 }
 
-
-
+header .end .images img {
+    height: 1900px;
+    width: 1900px;
+}
 
 .box {
     padding: 1em !important;
