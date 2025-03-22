@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmas Voyage</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="css/search.css"/>
+  <link rel="icon" href="img/favicon.png"/>
+  <script src="js/search.js"></script>
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="img/logo.png" alt="LOGO">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-white">
+                  <span class="icon">
+                    <i class="fas fa-heart"></i>
+                  </span>
+          </a>
+          <a class="button is-light">
+                  <span class="icon">
+                    <i class="fas fa-user-circle"></i>
+                  </span>
+            <span>Connexion</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="search">
+  <aside>
+    <h2 class="title is-4">Filtres</h2>
+
+    <div class="filter">
+      <h3 class="subtitle">Prix</h3>
+      <input type="range">
+    </div>
+
+    <div class="filter">
+      <h3 class="subtitle">Pays</h3>
+      <select>
+        <option>France</option>
+        <option>Italie</option>
+        <option>Allemagne</option>
+      </select>
+    </div>
+
+    <div class="filter">
+      <h3 class="subtitle">Type de voyage</h3>
+      <label>
+        <input type="radio">
+        Découverte
+      </label>
+      <label>
+        <input type="radio">
+        En famille
+      </label>
+      <label>
+        <input type="radio">
+        Romantique
+      </label>
+    </div>
+  </aside>
+  <main>
+    <div class="searchbar">
+      <input id="query" name="query" placeholder="Rechercher un lieu" >
+      <a class="button is-primary is-gradient" role="button">
+        <span class="icon">
+                              <i class="fas fa-search"></i>
+                          </span>
+      </a>
+    </div>
+    <h2 class="title is-4">Résultats</h2>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://www.kayak.fr/rimg/dimg/8e/23/15037580-city-15957-162cf3395da.jpg?width=600&height=313&xhint=1566&yhint=1072&crop=true" alt="">
+        <a href="#" class="button is-light">
+          <span class="icon">
+            <i class="far fa-heart"></i>
+          </span>
+        </a>
+        <header>
+          <h3 class="title">Porto</h3>
+          <h3 class="title">dès 3€</h3>
+        </header>
+        <div class="content">
+          <p>Portugual</p>
+          <p>12h de vol</p>
+        </div>
+      </div>
+
+<!--  Autres exemples    -->
+      <div class="card">
+        <img src="https://www.kayak.fr/rimg/dimg/bf/3b/3dfae4b9-lm-4502-1553ae30bd0.jpg?width=600&height=313&xhint=1754&yhint=1433&crop=true" alt="">
+        <a href="#" class="button is-light">
+          <span class="icon">
+            <i class="far fa-heart"></i>
+          </span>
+        </a>
+        <header>
+          <h3 class="title">Malaga</h3>
+          <h3 class="title">dès 36€</h3>
+        </header>
+        <div class="content">
+          <p>Espagne</p>
+          <p>2h de vol</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://www.kayak.fr/rimg/dimg/ba/d5/ffb7cae0-city-24030-164c8407d2c.jpg?width=600&height=313&xhint=2006&yhint=1666&crop=true" alt="">
+        <a href="#" class="button is-light">
+          <span class="icon">
+            <i class="far fa-heart"></i>
+          </span>
+        </a>
+        <header>
+          <h3 class="title">Toulouse</h3>
+          <h3 class="title">dès 0€</h3>
+        </header>
+        <div class="content">
+          <p>France</p>
+          <p>1h de vol</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://www.kayak.fr/rimg/dimg/05/fd/515362c8-lm-3638-165cdb13a57.jpg?width=600&height=313&xhint=2017&yhint=1499&crop=true" alt="">
+        <a href="#" class="button is-light">
+          <span class="icon">
+            <i class="far fa-heart"></i>
+          </span>
+        </a>
+        <header>
+          <h3 class="title">Rome</h3>
+          <h3 class="title">dès 100€</h3>
+        </header>
+        <div class="content">
+          <p>Italie</p>
+          <p>4h de vol</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+</body>
