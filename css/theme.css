@@ -11,6 +11,7 @@
     --text: #000;
     --card: #f0f3f5;
     --bulma-body-family: "TT Hoves", sans-serif !important;
+    --active-background: linear-gradient(135deg, #ff690f 0%, #ff4538 100%);
     --bulma-primary: #f45500;
     --bulma-primary-h: 21deg;
     --bulma-primary-s: 100%;
