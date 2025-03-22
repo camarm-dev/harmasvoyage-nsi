@@ -74,14 +74,16 @@
                     <p>Marathon</p>
                 </div>
             </div>
-            <div class="searchbar">
-              <input placeholder="Rechercher un lieu" >
-              <a class="button is-primary is-gradient">
-                <span class="icon">
-                  <i class="fas fa-search"></i>
-                </span>
-              </a>
-            </div>
+            <form action="search.html" method="get">
+                <div class="searchbar">
+                    <input id="query" name="query" placeholder="Rechercher un lieu" >
+                    <a class="button is-primary is-gradient" role="button">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </a>
+                </div>
+            </form>
         </div>
         <div class="end">
             <div class="images">
@@ -92,6 +94,12 @@
             </div>
         </div>
     </header>
-    <section></section>
+    <section class="section landing">
+      <div class="explain">
+        <img src="" alt="">
+        <h3>Dépense sans compter</h3>
+        <p>Des voyages en sah gratuits.</p>
+      </div>
+    </section>
 </body>
 </html>
