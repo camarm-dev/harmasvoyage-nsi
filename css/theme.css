@@ -21,3 +21,8 @@
 .title {
     --bulma-title-weight: 700 !important;
 }
+
+.button.is-primary.is-gradient {
+    color: var(--background) !important;
+    background: var(--active-background) !important;
+}
