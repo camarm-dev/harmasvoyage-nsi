@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     function insertPlace(place) {
         const card = document.createElement("a")
         const liked = savedTrips.includes(place.Identifier)
-        card.setAttribute("href", `/trip.html?id=${place.Identifier}`)
+        card.setAttribute("href", `trip.html?id=${place.Identifier}`)
         card.setAttribute("class", "card")
         card.innerHTML = `
             <a href="#" class="button is-light" id="like${place.Identifier}">
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             </header>
             <div class="content">
               <p>${place.Country}</p>
-              <p>${place["Fly time"]}</p>
+              <p>${place.FlyTime}</p>
             </div>
             `
         const button = card.querySelector("a.button")
@@ -90,8 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         resultsGrid.appendChild(message)
     }
 
-    loadData().then(result => {
-        const data = result.data
+    loadData().then(data => {
 
         function search(query) {
             query = query.toLowerCase()
