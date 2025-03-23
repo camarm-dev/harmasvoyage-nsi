@@ -33,4 +33,6 @@
 - [ ] Filtres de recherche "type"
 - [ ] Scrapper description + heures vols + image**s**
 - [ ] Page marathon
+  - Sélections des étapes du voyage
+  - Algo glouton sur le temps de voyage
 - [ ] Page découverte (des plats làààà)
