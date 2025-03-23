@@ -1,8 +1,8 @@
 City,Country,FlyTime,Images,Price,Description,Location,Identifier
-Porto,Portugal,,https://www.kayak.fr/rimg/dimg/8e/23/15037580-city-15957-162cf3395da.jpg?width=600&height=313&xhint=1566&yhint=1072&crop=true,78,,"-3.94558000,-42.68879000",01
-Fès,Maroc,,https://www.kayak.fr/rimg/dimg/3e/75/4c51003a-city-26641-1655cc09179.jpg?width=600&height=313&xhint=1490&yhint=1280&crop=true,79,,,02
+Porto,Portugal,,https://www.kayak.fr/rimg/dimg/8e/23/15037580-city-15957-162cf3395da.jpg?width=600&height=313&xhint=1566&yhint=1072&crop=true,78,,"41.14961000,-8.61099000",01
+Fès,Maroc,,https://www.kayak.fr/rimg/dimg/3e/75/4c51003a-city-26641-1655cc09179.jpg?width=600&height=313&xhint=1490&yhint=1280&crop=true,79,,"34.04000000,-4.87000000",02
 Marrakech,Maroc,,https://www.kayak.fr/rimg/dimg/b0/3c/b841ae82-city-26374-162e3a91595.jpg?width=600&height=313&xhint=1483&yhint=917&crop=true,96,,"31.63623000,-8.01041000",03
-Malaga,Espagne,,https://www.kayak.fr/rimg/dimg/08/17/cd31dc56-lm-4532-1527a1bf87f.jpg?width=600&height=313&xhint=1507&yhint=1400&crop=true,184,,"-31.85814290,115.87986450",04
+Malaga,Espagne,,https://www.kayak.fr/rimg/dimg/08/17/cd31dc56-lm-4532-1527a1bf87f.jpg?width=600&height=313&xhint=1507&yhint=1400&crop=true,184,,"36.72016000,-4.42034000",04
 Barcelone,Espagne,,https://www.kayak.fr/rimg/dimg/bf/3b/3dfae4b9-lm-4502-1553ae30bd0.jpg?width=600&height=313&xhint=1754&yhint=1433&crop=true,217,,,05
 Lisbonne,Portugal,,https://www.kayak.fr/rimg/dimg/6f/d0/ca880bb0-city-2172-162b4fafdfd.jpg?width=600&height=313&xhint=2690&yhint=1148&crop=true,228,,,06
 Bastia,France,,https://www.kayak.fr/rimg/dimg/35/db/189605c6-city-41202-165878bf824.jpg?width=600&height=313&xhint=1666&yhint=855&crop=true,235,,"42.70278000,9.45000000",07
@@ -11,7 +11,7 @@ Toulouse,France,,https://www.kayak.fr/rimg/dimg/ba/d5/ffb7cae0-city-24030-164c84
 Nice,France,,https://www.kayak.fr/rimg/dimg/ab/ac/1bce874d-city-3472-163dafcee57.jpg?width=600&height=313&xhint=1513&yhint=1097&crop=true,286,,"43.70313000,7.26608000",10
 Genève,Suisse,,https://www.kayak.fr/rimg/dimg/9c/e5/cb292d76-city-17898-164426fef12.jpg?width=600&height=313&xhint=1125&yhint=632&crop=true,295,,"46.20222000,6.14569000",11
 Funchal,Portugal,,https://www.kayak.fr/rimg/dimg/96/95/4c107705-city-13732-17771e35587.jpg?width=600&height=313&xhint=2839&yhint=1877&crop=true,295,,"32.66568000,-16.92547000",12
-Bristol,Royaume-Uni,,https://www.kayak.fr/rimg/dimg/96/c5/f583e405-city-33217-1657c87c388.jpg?width=600&height=313&xhint=2796&yhint=2439&crop=true,297,,"51.45523000,-2.59665000",13
+Bristol,Royaume-Uni,,https://www.kayak.fr/rimg/dimg/96/c5/f583e405-city-33217-1657c87c388.jpg?width=600&height=313&xhint=2796&yhint=2439&crop=true,297,,"41.67176000,-72.94927000",13
 Reggio de Calabre,Italie,,https://www.kayak.fr/rimg/dimg/38/02/055918bc-city-47701-168ed3fcb05.jpg?width=600&height=313&xhint=1850&yhint=1429&crop=true,304,,,14
 Bruxelles,Belgique,,https://www.kayak.fr/rimg/dimg/95/88/fa775d1a-city-32869-162f8e34e28.jpg?width=600&height=313&xhint=1889&yhint=1740&crop=true,306,,,15
 Londres,Royaume-Uni,,https://www.kayak.fr/rimg/dimg/8a/d8/29dcb2f0-city-28501-189fedf72f2.jpg?width=600&height=313&xhint=1400&yhint=1181&crop=true,327,,"-27.71439000,-67.13349000",16
@@ -19,26 +19,26 @@ Budapest,Hongrie,,https://www.kayak.fr/rimg/dimg/82/aa/2232ea22-city-34945-163db
 Ibiza,Espagne,,https://www.kayak.fr/rimg/dimg/af/c9/d07c8f45-city-8085-162f8b4fc4b.jpg?width=600&height=313&xhint=1476&yhint=888&crop=true,349,,"38.90883000,1.43296000",18
 Agadir,Maroc,,https://www.kayak.fr/rimg/dimg/c0/3e/fc7d0d0d-city-35407-1650ff6f41f.jpg?width=600&height=313&xhint=1569&yhint=1017&crop=true,359,,"30.42018000,-9.59815000",19
 Stockholm,Suède,,https://www.kayak.fr/rimg/dimg/e8/2f/e06fc923-city-9880-556ef7be.jpg?width=600&height=313&xhint=1268&yhint=560&crop=true,361,,"59.33258000,18.06490000",20
-Alicante,Espagne,,https://www.kayak.fr/rimg/dimg/c1/02/978e9bab-city-20171-16441717343.jpg?width=600&height=313&xhint=1625&yhint=1314&crop=true,364,,"10.89704000,123.01850000",21
+Alicante,Espagne,,https://www.kayak.fr/rimg/dimg/c1/02/978e9bab-city-20171-16441717343.jpg?width=600&height=313&xhint=1625&yhint=1314&crop=true,364,,"38.34517000,-0.48149000",21
 Berlin,Allemagne,,https://www.kayak.fr/rimg/dimg/66/73/57707be7-city-9109-162d3eba142.jpg?width=600&height=313&xhint=2876&yhint=1622&crop=true,401,,"52.52437000,13.41053000",22
 Prague,République Tchèque,,https://www.kayak.fr/rimg/dimg/02/18/8904e548-city-19865-163cbc3a79e.jpg?width=600&height=313&xhint=1779&yhint=1269&crop=true,403,,"50.08804000,14.42076000",23
 Marseille,France,,https://www.kayak.fr/rimg/dimg/fe/69/7db19d20-city-1588-163d5ec6d89.jpg?width=600&height=313&xhint=1572&yhint=900&crop=true,404,,"43.29695000,5.38107000",24
 Tunis,Tunisie,,https://www.kayak.fr/rimg/dimg/26/b8/1213a0c2-city-32784-164a4870119.jpg?width=600&height=313&xhint=2574&yhint=1605&crop=true,404,,"36.81897000,10.16579000",25
-Casablanca,Maroc,,https://www.kayak.fr/rimg/dimg/e0/25/cd197c07-city-25947-166309a5888.jpg?width=600&height=313&xhint=1838&yhint=1995&crop=true,408,,"-33.31666667,-71.41666667",26
-Madrid,Espagne,,https://www.kayak.fr/rimg/dimg/ff/2a/e1b64f74-city-32213-16b31d00c32.jpg?width=600&height=313&xhint=3192&yhint=1947&crop=true,418,,"4.75564000,-74.27708000",27
+Casablanca,Maroc,,https://www.kayak.fr/rimg/dimg/e0/25/cd197c07-city-25947-166309a5888.jpg?width=600&height=313&xhint=1838&yhint=1995&crop=true,408,,"33.58840000,-7.55785000",26
+Madrid,Espagne,,https://www.kayak.fr/rimg/dimg/ff/2a/e1b64f74-city-32213-16b31d00c32.jpg?width=600&height=313&xhint=3192&yhint=1947&crop=true,418,,"40.41650000,-3.70256000",27
 Lyon,France,,https://www.kayak.fr/rimg/dimg/6e/be/35edddf3-city-32643-16485e729ae.jpg?width=600&height=313&xhint=1975&yhint=878&crop=true,422,,"45.74846000,4.84671000",28
 Istanbul,Turquie,,https://www.kayak.fr/rimg/dimg/d2/71/8a9758f3-city-3430-163cc469939.jpg?width=600&height=313&xhint=1842&yhint=996&crop=true,436,,"41.00537020,28.68251620",29
 Palma de Majorque,Espagne,,https://www.kayak.fr/rimg/dimg/2d/ae/ab5e7a69-city-12458-16547ce83a1.jpg?width=600&height=313&xhint=1394&yhint=1150&crop=true,442,,,30
 Copenhague,Danemark,,https://www.kayak.fr/rimg/dimg/32/18/116790b2-hood-211744-168c3006c7f.jpg?width=600&height=313&xhint=1544&yhint=1299&crop=true,452,,,31
 Milan,Italie,,https://www.kayak.fr/rimg/dimg/29/29/33b4cdc7-city-53596-15ceaf780b9.jpg?width=600&height=313&xhint=2064&yhint=1531&crop=true,455,,"45.46427000,9.18951000",32
-Nantes,France,,https://www.kayak.fr/rimg/dimg/4d/94/b37a33af-city-27584-164dce806c2.jpg?width=600&height=313&xhint=1119&yhint=915&crop=true,468,,"-22.60334000,-51.20840000",33
+Nantes,France,,https://www.kayak.fr/rimg/dimg/4d/94/b37a33af-city-27584-164dce806c2.jpg?width=600&height=313&xhint=1119&yhint=915&crop=true,468,,"47.21725000,-1.55336000",33
 Ponta Delgada,Portugal,,https://www.kayak.fr/rimg/dimg/cf/e5/477d2e40-city-8254-16388ce8638.jpg?width=600&height=313&xhint=2549&yhint=1840&crop=true,480,,"37.74230000,-25.67093000",34
-Séville,Espagne,,https://www.kayak.fr/rimg/dimg/30/cf/4ddfe545-city-10121-163db2f7d5f.jpg?width=600&height=313&xhint=2998&yhint=996&crop=true,488,,,35
-Lille,France,,https://www.kayak.fr/rimg/dimg/9c/b0/58d10c0e-city-12446-168eca56eb8.jpg?width=600&height=313&xhint=2431&yhint=2153&crop=true,496,,"51.24197000,4.82313000",36
+Séville,Espagne,,https://www.kayak.fr/rimg/dimg/30/cf/4ddfe545-city-10121-163db2f7d5f.jpg?width=600&height=313&xhint=2998&yhint=996&crop=true,488,,"-37.79802000,145.48763000",35
+Lille,France,,https://www.kayak.fr/rimg/dimg/9c/b0/58d10c0e-city-12446-168eca56eb8.jpg?width=600&height=313&xhint=2431&yhint=2153&crop=true,496,,"50.63297000,3.05858000",36
 Düsseldorf,Allemagne,,https://www.kayak.fr/rimg/dimg/c2/09/f8e0c920-city-15317-177952a7ef2.jpg?width=600&height=313&xhint=2956&yhint=2229&crop=true,504,,"51.22172000,6.77616000",37
-Paris,France,,https://www.kayak.fr/rimg/dimg/bd/d1/2f268866-city-36014-162f82486f9.jpg?width=600&height=313&xhint=2485&yhint=1564&crop=true,510,,"43.20000000,-80.38333000",38
+Paris,France,,https://www.kayak.fr/rimg/dimg/bd/d1/2f268866-city-36014-162f82486f9.jpg?width=600&height=313&xhint=2485&yhint=1564&crop=true,510,,"48.85340000,2.34860000",38
 Bordeaux,France,,https://www.kayak.fr/rimg/dimg/fc/bb/362e038f-city-8375-162d3f09228.jpg?width=600&height=313&xhint=2611&yhint=2259&crop=true,514,,"44.84044000,-0.58050000",39
-Faro,Portugal,,https://www.kayak.fr/rimg/dimg/51/d7/c5ce3fd8-city-36252-1776842079c.jpg?width=600&height=313&xhint=1988&yhint=1954&crop=true,534,,"-1.11536000,-57.77412000",40
+Faro,Portugal,,https://www.kayak.fr/rimg/dimg/51/d7/c5ce3fd8-city-36252-1776842079c.jpg?width=600&height=313&xhint=1988&yhint=1954&crop=true,534,,"37.01869000,-7.92716000",40
 Nador,Maroc,,https://www.kayak.fr/rimg/dimg/4f/e6/ad7ae39c-city-53746-16a68345f33.jpg?width=600&height=313&xhint=1342&yhint=2232&crop=true,539,,"35.00000000,-3.00000000",41
 Amsterdam,Pays-Bas,,https://www.kayak.fr/rimg/dimg/8e/a5/73e3f2e4-ctry-174-16751ec4a2e.jpg?width=600&height=313&xhint=1447&yhint=1688&crop=true,542,,"52.37403000,4.88969000",42
 Palerme,Italie,,https://www.kayak.fr/rimg/dimg/7a/e3/3f840602-city-14184-16494485bfa.jpg?width=600&height=313&xhint=1676&yhint=1205&crop=true,545,,,43
@@ -49,7 +49,7 @@ Enfida,Tunisie,,https://content.r9cdn.net/res/images/horizon/explore/destination
 Vienne,Autriche,,https://www.kayak.fr/rimg/dimg/5c/8d/96b3fbc0-city-22046-1770568a108.jpg?width=600&height=313&xhint=3202&yhint=1644&crop=true,604,,"45.52569000,4.87484000",48
 Essaouira,Maroc,,https://www.kayak.fr/rimg/dimg/98/d0/c8ba650e-city-43163-16e8edf80c2.jpg?width=600&height=313&xhint=1694&yhint=959&crop=true,621,,"31.50675000,-9.75655000",49
 Bakou,Azerbaïdjan,,https://www.kayak.fr/rimg/dimg/4d/5a/a25ec4ac-city-33415-16510f7e605.jpg?width=600&height=313&xhint=3749&yhint=1414&crop=true,633,,,50
-Héraklion,Grèce,,https://www.kayak.fr/rimg/dimg/cd/7f/cda408ab-city-44123-163f9fc9b21.jpg?width=600&height=313&xhint=2109&yhint=1700&crop=true,640,,,51
-Kythira,Grèce,,https://content.r9cdn.net/res/images/horizon/explore/destination-placeholder.png?v=6f09568c3b085bb065962f42f3ff300b422a576d&cluster=5,677,,,52
+Héraklion,Grèce,,https://www.kayak.fr/rimg/dimg/cd/7f/cda408ab-city-44123-163f9fc9b21.jpg?width=600&height=313&xhint=2109&yhint=1700&crop=true,640,,"35.33870000,25.14420000",51
+Kythira,Grèce,,https://content.r9cdn.net/res/images/horizon/explore/destination-placeholder.png?v=6f09568c3b085bb065962f42f3ff300b422a576d&cluster=5,677,,"36.14955000,22.98979000",52
 Porto-Santo,Portugal,,https://www.kayak.fr/rimg/dimg/4a/f2/5fd5fe99-city-47423-168f2493eb5.jpg?width=600&height=313&xhint=970&yhint=1360&crop=true,740,,,53
 Mykonos,Grèce,,https://www.kayak.fr/rimg/dimg/63/30/85cee65b-city-46053-162e4e5ea9d.jpg?width=600&height=313&xhint=2577&yhint=1496&crop=true,878,,"37.44529000,25.32872000",54
