@@ -74,6 +74,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         const addFavorite = (event) => {
             event.preventDefault()
             saveTrip(place.Identifier)
+            if (!savedTrips.includes(place.Identifier)) {
+                savedTrips.push(place.Identifier)
+            } else {
+                savedTrips.splice(savedTrips.indexOf(place.Identifier), 1)
+            }
             const icon = button.querySelector(".icon svg")
             const prefix = icon.dataset.prefix
             icon.dataset.prefix = prefix == "far" ? "fas" : "far"
