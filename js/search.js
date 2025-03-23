@@ -131,6 +131,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         searchForm.onsubmit = () => {
             dynamicSearch(searchbar.value)
+            if (history.pushState) {
+                const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?query=${searchbar.value}`;
+                history.pushState({
+                    path: newUrl
+                }, "", newUrl)
+            }
             return false
         }
         applyFiltersButton.addEventListener("click", () => {
