@@ -8,6 +8,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="css/search.css"/>
   <link rel="icon" href="img/favicon.png"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/csv.js"></script>
   <script src="js/search.js"></script>
 </head>
 <body>
@@ -80,17 +82,22 @@
     </div>
   </aside>
   <main>
-    <div class="searchbar">
-      <input id="query" name="query" placeholder="Rechercher un lieu" >
-      <a class="button is-primary is-gradient" role="button">
-        <span class="icon">
-                              <i class="fas fa-search"></i>
-                          </span>
-      </a>
+    <form id="search">
+      <div class="searchbar">
+        <input id="query" name="query" placeholder="Rechercher un lieu" >
+        <button class="button is-primary is-gradient" type="submit">
+          <span class="icon">
+            <i class="fas fa-search"></i>
+          </span>
+        </button>
+      </div>
+    </form>
+    <div class="header-section">
+      <h2 class="title is-4">Résultats</h2>
+      <h4 class="subtitle is-6">Trouvez votre destination</h4>
     </div>
-    <h2 class="title is-4">Résultats</h2>
 
-    <div class="grid">
+    <div class="grid" id="results">
       <div class="card">
         <img src="https://www.kayak.fr/rimg/dimg/8e/23/15037580-city-15957-162cf3395da.jpg?width=600&height=313&xhint=1566&yhint=1072&crop=true" alt="">
         <a href="#" class="button is-light">
