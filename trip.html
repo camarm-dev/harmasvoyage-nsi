@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmas Voyage</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="css/trip.css"/>
+  <link rel="icon" href="img/favicon.png"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/csv.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/trip.js"></script>
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="img/logo.png" alt="LOGO">
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-white">
+                  <span class="icon">
+                    <i class="fas fa-heart"></i>
+                  </span>
+          </a>
+          <a class="button is-light">
+                  <span class="icon">
+                    <i class="fas fa-user-circle"></i>
+                  </span>
+            <span>Connexion</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<header>
+  <a class="button is-text" href="search.html">
+    <span class="icon">
+      <i class="fas fa-chevron-left"></i>
+    </span>
+    <span>Retour</span>
+  </a>
+  <button class="button is-primary is-gradient">
+    Commander
+  </button>
+</header>
+<section class="trip">
+  <main>
+    <div class="is-flex is-justify-content-space-between">
+    <h1 class="title city"></h1>
+    <a href="#" class="button is-outline" id="like">
+      <span>Ajouter à ma liste d'envies</span>
+      <span class="icon">
+          <i class="far fa-heart"></i>
+        </span>
+    </a>
+  </div>
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="search.html">Les voyages</a></li>
+        <li><a class="has-text-grey-dark country"></a></li>
+        <li><a class="has-text-grey-dark city"></a></li>
+      </ul>
+    </nav>
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <figure class="image">
+          <img src="" alt="Image" id="image">
+        </figure>
+      </div>
+      <div class="column">
+        <div class="fly">
+          <h2 class="title is-5">Voyage à <span class="city"></span></h2>
+          <p class="subtitle is-6" id="flyTime"></p>
+          <div class="is-flex is-justify-content-space-between mb-3">
+            <span>Le moins cher</span>
+            <b id="price"></b>
+          </div>
+          <button class="button is-fullwidth is-primary is-gradient">En sah !?</button>
+        </div>
+        <div class="fly">
+          <h2 class="title is-5">Marathon</h2>
+          <p class="subtitle is-6">Lieu le plus proche</p>
+          <div class="is-flex is-justify-content-space-between mb-3">
+            <span id="closestPlace">Paris</span>
+            <b id="closestPlaceFlyTime">1h de vol</b>
+          </div>
+          <button class="button is-fullwidth is-outline">Commencer un marathon</button>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="description">
+      <h2>Pourquoi visiter Londres ?</h2>
+      <p>Magnifique ville en sah</p>
+      <p>Incroyable !</p>
+    </div>
+  </main>
+  <aside>
+    La carte interactive elle arrive soon
+  </aside>
+</section>
+</body>
