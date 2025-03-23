@@ -25,13 +25,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             text.innerText = "Ajouter à ma liste d'envies"
         }
     })
-    if (liked) {
-        const likeIcon = likeButton.querySelector(".icon svg")
-        const likeIconPrefix = likeIcon.dataset.prefix
-        likeIcon.dataset.prefix = likeIconPrefix === "far" ? "fas" : "far"
-        likeIcon.parentElement.classList.toggle("is-red")
-        likeButton.querySelector("span").innerText = "Retirer de ma liste d'envies"
-    }
+
+    // Wait for Fontawesome icon ot be loaded
+    setTimeout(() => {
+        if (liked) {
+            const likeIcon = likeButton.querySelector(".icon svg")
+            const likeIconPrefix = likeIcon.dataset.prefix
+            likeIcon.dataset.prefix = likeIconPrefix === "far" ? "fas" : "far"
+            likeIcon.parentElement.classList.toggle("is-red")
+            likeButton.querySelector("span").innerText = "Retirer de ma liste d'envies"
+        }
+    }, 500)
 
     loadData().then(data => {
         const trip = data.find(row => row.Identifier === tripId)
