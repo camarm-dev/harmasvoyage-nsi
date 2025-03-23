@@ -15,9 +15,12 @@ async function loadData() {
     })
 }
 
-function getLocation() {
+function getLocation(){
     return new Promise((resolve) => {
         if (navigator.geolocation) {
+            navigator.permissions.query({
+                name: "geolocation"
+            })
             navigator.geolocation.getCurrentPosition((position) => {
                 resolve([position.coords.latitude, position.coords.longitude])
             })
