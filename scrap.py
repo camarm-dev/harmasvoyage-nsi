@@ -10,7 +10,7 @@ def get_location(city_name: str):
 def get_place_data(place: BeautifulSoup, number: int):
     city = place.find(attrs={"class": "City__Name"}).text.strip()
     country = place.find(attrs={"class": "Country__Name"}).text.strip()
-    price = place.find(attrs={"class": "_ib0 _18 _igh _ial _iaj"}).text.strip()
+    price = place.find(attrs={"class": "_ib0 _18 _igh _ial _iaj"}).text.replace("dès ", "").replace("€", "").strip()
     image = "https://www.kayak.fr" + place.find("img")["data-original"]
     fly_time = ""
     location = get_location(city)
