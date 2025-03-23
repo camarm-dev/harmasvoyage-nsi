@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     priceFilter.addEventListener("input", updatePriceLabel)
 
+    const savedTrips = getSavedTrips()
+
     function setupFilters(data) {
         const minPrice = getMinPrice(data)
         const maxPrice = getMaxPrice(data)
@@ -48,15 +50,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function insertPlace(place) {
-        const card = document.createElement("div")
+        const card = document.createElement("a")
+        const liked = savedTrips.includes(place.Identifier)
+        card.setAttribute("href", `/trip.html?id=${place.Identifier}`)
         card.setAttribute("class", "card")
         card.innerHTML = `
-            <img src="${place.Images.split(',')[0]}" alt="Image de ${place.City}">
-            <a href="#" class="button is-light">
-              <span class="icon">
-                <i class="far fa-heart"></i>
+            <a href="#" class="button is-light" id="like${place.Identifier}">
+              <span class="icon ${liked && 'is-red'}">
+                <i class="fa${liked ? 's' : 'r'} fa-heart"></i>
               </span>
             </a>
+            <img src="${place.Images.split(',')[0]}" alt="Image de ${place.City}">
             <header>
               <h3 class="title">${place.City}</h3>
               <h3 class="title">dès ${place.Price}€</h3>
@@ -64,7 +68,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="content">
               <p>${place.Country}</p>
               <p>${place["Fly time"]}</p>
-            </div>`
+            </div>
+            `
+        const button = card.querySelector("a.button")
+        const addFavorite = (event) => {
+            event.preventDefault()
+            saveTrip(place.Identifier)
+            const icon = button.querySelector(".icon svg")
+            const prefix = icon.dataset.prefix
+            icon.dataset.prefix = prefix == "far" ? "fas" : "far"
+            icon.parentElement.classList.toggle("is-red")
+        }
+        button.addEventListener("click", addFavorite)
         resultsGrid.appendChild(card)
     }
 
@@ -79,6 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = result.data
 
         function search(query) {
+            query = query.toLowerCase()
             const filters = getFilters()
             const filteredTrips = data
                 .filter(trip => filters.countries.length > 0 ? filters.countries.includes(trip.Country) : true) // Country filter
@@ -106,7 +122,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             resultsGrid.innerHTML = ""
             const results = search(query.trim())
             for (const place of results) {
-                console.log(place)
                 insertPlace(place)
             }
             if (results.length === 0) {
@@ -124,6 +139,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         setupFilters(data)
         dynamicSearch(getQuery())
+        searchbar.value = getQuery()
     })
 })
 
