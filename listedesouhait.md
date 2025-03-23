@@ -46,3 +46,4 @@
 - Page favoris (affiche juste les favoris)
 - Remplir les descriptions
 - Refaire tri / Min / max ??
+- Remplir descriptions, plats ect avec des IA (utiliser une API)
