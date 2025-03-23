@@ -1,0 +1,62 @@
+@import url("theme.css");
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .55px var(--card) solid;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.trip, header {
+    max-width: 1600px;
+    width: 98%;
+    margin: auto;
+}
+
+.trip {
+    display: flex;
+    min-height: 90vh;
+}
+
+.trip main {
+    width: 100%;
+    padding-top: 1em;
+    padding-right: 1.5rem;
+    border-right: .55px var(--card) solid;
+}
+
+.trip main h1 {
+    margin: 0 !important;
+}
+
+.trip aside {
+    min-width: 500px;
+}
+
+figure {
+    /*max-width: 600px;*/
+    width: 100%;
+}
+
+figure img {
+    border-radius: 6px !important;
+}
+
+.trip .content {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.fly {
+    padding: 1em;
+    border-radius: 6px;
+    background: var(--white);
+    border: .55px solid var(--card);
+    max-width: 350px;
+    margin-bottom: 1.5rem;
+}
+
+.fly:last-child {
+    margin-bottom: 0;
+}
