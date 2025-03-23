@@ -27,12 +27,22 @@
 - [ ] Page de favoris
 - [ ] Page de voyage
   - [ ] Carte
+  - [ ] Commander le voyage
   - Description
   - ...
-- [ ] Page de voyage: commander le voyage
 - [ ] Filtres de recherche "type"
 - [ ] Scrapper description + heures vols + image**s**
 - [ ] Page marathon
   - Sélections des étapes du voyage
   - Algo glouton sur le temps de voyage
 - [ ] Page découverte (des plats làààà)
+
+
+### Pour Gab et Elias
+
+- Algos gloutons
+  - Trouver le lieu le plus proche (pour la page voyage)
+  - Trouver le chemin le plus court pour le marathon
+- Page favoris (affiche juste les favoris)
+- Remplir les descriptions
+- Refaire tri / Min / max ??
