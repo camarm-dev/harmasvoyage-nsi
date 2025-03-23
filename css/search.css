@@ -87,10 +87,6 @@
     top: 7px;
 }
 
-.icon.is-red {
-    color: var(--like);
-}
-
 .card img {
     width: 100%;
     object-fit: cover;
