@@ -52,33 +52,43 @@
     <h2 class="title is-4">Filtres</h2>
 
     <div class="filter">
-      <h3 class="subtitle">Prix</h3>
-      <input type="range">
+      <label for="price" class="is-flex is-justify-content-space-between">
+        <span class="subtitle">Prix</span>
+        <span id="priceLabel"></span>
+      </label>
+      <input id="price" type="range">
     </div>
 
     <div class="filter">
-      <h3 class="subtitle">Pays</h3>
-      <select>
-        <option>France</option>
-        <option>Italie</option>
-        <option>Allemagne</option>
-      </select>
+      <label for="country" class="subtitle">Pays</label>
+      <div class="control mt-2">
+        <div class="select">
+          <select id="country">
+          </select>
+        </div>
+      </div>
     </div>
 
     <div class="filter">
       <h3 class="subtitle">Type de voyage</h3>
-      <label>
-        <input type="radio">
-        Découverte
-      </label>
-      <label>
-        <input type="radio">
-        En famille
-      </label>
-      <label>
-        <input type="radio">
-        Romantique
-      </label>
+      <div class="control ">
+        <label class="radio">
+          <input type="radio" name="type" />
+          Découverte
+        </label>
+        <label class="radio">
+          <input type="radio" name="type" />
+          En famille
+        </label>
+        <label class="radio">
+          <input type="radio" name="type" />
+          Romantique
+        </label>
+      </div>
+    </div>
+
+    <div class="filter">
+      <button id="applyFilters" class="button is-fullwidth is-primary is-gradient">Appliquer</button>
     </div>
   </aside>
   <main>
@@ -98,72 +108,7 @@
     </div>
 
     <div class="grid" id="results">
-      <div class="card">
-        <img src="https://www.kayak.fr/rimg/dimg/8e/23/15037580-city-15957-162cf3395da.jpg?width=600&height=313&xhint=1566&yhint=1072&crop=true" alt="">
-        <a href="#" class="button is-light">
-          <span class="icon">
-            <i class="far fa-heart"></i>
-          </span>
-        </a>
-        <header>
-          <h3 class="title">Porto</h3>
-          <h3 class="title">dès 3€</h3>
-        </header>
-        <div class="content">
-          <p>Portugual</p>
-          <p>12h de vol</p>
-        </div>
-      </div>
-
-<!--  Autres exemples    -->
-      <div class="card">
-        <img src="https://www.kayak.fr/rimg/dimg/bf/3b/3dfae4b9-lm-4502-1553ae30bd0.jpg?width=600&height=313&xhint=1754&yhint=1433&crop=true" alt="">
-        <a href="#" class="button is-light">
-          <span class="icon">
-            <i class="far fa-heart"></i>
-          </span>
-        </a>
-        <header>
-          <h3 class="title">Malaga</h3>
-          <h3 class="title">dès 36€</h3>
-        </header>
-        <div class="content">
-          <p>Espagne</p>
-          <p>2h de vol</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://www.kayak.fr/rimg/dimg/ba/d5/ffb7cae0-city-24030-164c8407d2c.jpg?width=600&height=313&xhint=2006&yhint=1666&crop=true" alt="">
-        <a href="#" class="button is-light">
-          <span class="icon">
-            <i class="far fa-heart"></i>
-          </span>
-        </a>
-        <header>
-          <h3 class="title">Toulouse</h3>
-          <h3 class="title">dès 0€</h3>
-        </header>
-        <div class="content">
-          <p>France</p>
-          <p>1h de vol</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://www.kayak.fr/rimg/dimg/05/fd/515362c8-lm-3638-165cdb13a57.jpg?width=600&height=313&xhint=2017&yhint=1499&crop=true" alt="">
-        <a href="#" class="button is-light">
-          <span class="icon">
-            <i class="far fa-heart"></i>
-          </span>
-        </a>
-        <header>
-          <h3 class="title">Rome</h3>
-          <h3 class="title">dès 100€</h3>
-        </header>
-        <div class="content">
-          <p>Italie</p>
-          <p>4h de vol</p>
-        </div>
-      </div>
+      <p class="content">Aucun résultat.</p>
     </div>
   </main>
 </section>
