@@ -1,10 +1,21 @@
 import csv
 from bs4 import BeautifulSoup
+from unidecode import unidecode
 
 def get_location(city_name: str):
+    results = []
     for city in cities:
-        if city_name == city[1]:
-            return [city[8], city[9]]
+        if unidecode(city_name) == unidecode(city[1]):
+            results.append(city)
+    if len(results) > 1:
+        print("Choose valid coords")
+        for index, city in enumerate(results):
+            print(f"[{index}] {city[1]} {city[7]}")
+        choice = int(input(">>> "))
+        print("\033[2K" * len(results))
+        return [results[choice][8], results[choice][9]]
+    elif len(results) == 1:
+        return [results[0][8], results[0][9]]
     return []
 
 def get_place_data(place: BeautifulSoup, number: int):
