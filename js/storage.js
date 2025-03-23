@@ -8,6 +8,10 @@ function getSavedTrips() {
 
 function saveTrip(id) {
     const trips = getSavedTrips()
-    trips.push(id)
+    if (trips.includes(id)) {
+        trips.splice(trips.indexOf(id), 1)
+    } else {
+        trips.push(id)
+    }
     localStorage.setItem(KEYS.savedTrips, JSON.stringify(trips))
 }
