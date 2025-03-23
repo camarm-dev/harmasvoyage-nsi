@@ -7,9 +7,11 @@
 }
 
 :root {
-    --background: #fff;
+    --background: #fdfdfd;
+    --white: #fff;
     --text: #000;
-    --card: #f0f3f5;
+    --card: #e6e9ea;
+    --card-bg: #f0f3f5;
     --bulma-body-family: "TT Hoves", sans-serif !important;
     --active-background: linear-gradient(135deg, #ff690f 0%, #ff4538 100%);
     --bulma-primary: #f45500;
@@ -19,12 +21,16 @@
     --like: #dc2828;
 }
 
+.navbar, body {
+    background: var(--background);
+}
+
 .title {
     --bulma-title-weight: 700 !important;
 }
 
 .button.is-primary.is-gradient {
-    color: var(--background) !important;
+    color: var(--white) !important;
     background: var(--active-background) !important;
 }
 
