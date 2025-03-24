@@ -46,6 +46,7 @@ figure img {
 .trip .content {
     margin-top: 1em;
     margin-bottom: 1em;
+    padding-right: 2em;
 }
 
 .fly {
@@ -59,4 +60,8 @@ figure img {
 
 .fly:last-child {
     margin-bottom: 0;
+}
+
+.trip .content h2 {
+    font-size: 1.5rem !important;
 }
