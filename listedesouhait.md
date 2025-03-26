@@ -31,7 +31,7 @@
   - Description
   - ...
 - [ ] Filtres de recherche "type"
-- [ ] Scrapper description + heures vols + image**s**
+- [x] Scrapper description + heures vols + image**s**
 - [ ] Page marathon
   - Sélections des étapes du voyage
   - Algo glouton sur le temps de voyage
@@ -46,4 +46,4 @@
 - Page favoris (affiche juste les favoris)
 - Remplir les descriptions
 - Refaire tri / Min / max ??
-- Remplir descriptions, plats ect avec des IA (utiliser une API)
+-[x] Remplir descriptions, plats ect avec des IA (utiliser une API)
