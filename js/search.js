@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function getQuery() {
-        return new URLSearchParams(window.location.search).get('query').trim()
+        const query = new URLSearchParams(window.location.search)
+        return query && query.get('query').trim()
     }
 
     function insertPlace(place) {
