@@ -1,26 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const section = document.getElementById("favoris")
+    const grid = document.getElementById("favoris")
     loadData().then(data => {
-        const fav = getSavedTrips()
-        for (const i of data) {
-            if (fav.includes(i.Identifier)) {
-                const card = document.createElement("a") 
-                card.class = "card"
-                card.href = "trip.html?id=" + i.Identifier
+        const savedTrips = getSavedTrips()
+
+        for (const trip of data) {
+            if (savedTrips.includes(trip.Identifier)) {
+
+                const card = document.createElement("a")
+                card.classList.add("card")
+                card.href = "trip.html?id=" + trip.Identifier
                 card.innerHTML = `
-                <img src="${i.Images.split(',')[0]}" alt="Image de ${i.City}">
+                <a href="#" class="button is-light" id="like${trip.Identifier}">
+                  <span class="icon is-red">
+                    <i class="fas fa-heart"></i>
+                  </span>
+                </a>
+                <img src="${trip.Images.split(',')[0]}" alt="Image de ${trip.City}">
                 <header>
-                    <h3 class="title">${i.City}</h3>
-                    <h3 class="title">${i.Country}</h3>
-                    <h3 class="title">dès ${i.Price}€</h3>
+                    <h3 class="title">${trip.City}</h3>
+                    <h3 class="title">dès ${trip.Price}€</h3>
                 </header>
                 <div class="content">
-                    <p>${i.Country}</p>
-                    <p>${i.FlyTime}</p>
+                    <p>${trip.Country}</p>
+                    <p>${trip.FlyTime}</p>
                 </div>`
-                section.appendChild(card)
+
+                const button = card.querySelector("a.button")
+                const addFavorite = (event) => {
+                    event.preventDefault()
+                    saveTrip(trip.Identifier)
+                    if (!savedTrips.includes(trip.Identifier)) {
+                        savedTrips.push(trip.Identifier)
+                    } else {
+                        savedTrips.splice(savedTrips.indexOf(trip.Identifier), 1)
+                    }
+                    const icon = button.querySelector(".icon svg")
+                    const prefix = icon.dataset.prefix
+                    icon.dataset.prefix = prefix == "far" ? "fas" : "far"
+                    icon.parentElement.classList.toggle("is-red")
+                }
+                button.addEventListener("click", addFavorite)
+
+                grid.appendChild(card)
             }
-        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        }
 
     })
 })
