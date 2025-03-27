@@ -67,6 +67,11 @@
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
 }
 
+.grid.large {
+    max-width: 100%;
+    width: 100%;
+}
+
 @media (max-width: 1200px) {
     .card {
         min-width: 250px;
