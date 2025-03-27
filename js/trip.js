@@ -54,7 +54,43 @@ document.addEventListener('DOMContentLoaded', async () => {
             price.innerText = `dès ${trip.Price}€`
             description.innerHTML = trip.Description
         }
+        const [latitude, longitude] = trip.Location.split(",")
+
+        mapboxgl.accessToken = '';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            center: [Number(longitude), Number(latitude)], // Long, lat
+            zoom: 9
+        })
+
+        map.on("load", () => {
+            map.addSource("marker", {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [Number(longitude), Number(latitude)]
+                            },
+                            'properties': {
+                                'title': `${trip.City}`
+                            }
+                        }
+                    ]
+                }
+            })
+
+            map.addLayer({
+                'id': 'marker',
+                'type': 'symbol',
+                'source': 'marker'
+            });
+        })
     })
 })
+
 
 
