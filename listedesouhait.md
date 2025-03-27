@@ -24,7 +24,7 @@
 - [x] Page d'accueil simple
 - [x] Page de recherche simple
 - [ ] Page d'accueil avancée
-- [ ] Page de favoris
+- [x] Page de favoris
 - [ ] Page de voyage
   - [ ] Carte
   - [ ] Commander le voyage
