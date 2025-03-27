@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const applyFiltersButton = document.getElementById("applyFilters")
     const searchbar = document.getElementById("query")
 
+    const typeFilterInputs = document.querySelectorAll("input[name=type]")
+    for (const radio of typeFilterInputs) {
+        radio.addEventListener("click", (event) => {
+            if (event.ctrlKey || event.metaKey) {
+                radio.checked = false
+            }
+        })
+    }
+
     priceFilter.addEventListener("input", updatePriceLabel)
 
     const savedTrips = getSavedTrips()
@@ -41,7 +50,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     function getFilters() {
         return {
             price: Number(priceFilter.value) || 0,
-            countries: countryFilter.value === "*" ? [] : countryFilter.value
+            countries: countryFilter.value === "*" ? [] : countryFilter.value,
+            type: document.querySelector("input[name=type]:checked")?.value
         }
     }
 
@@ -104,6 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const filteredTrips = data
                 .filter(trip => filters.countries.length > 0 ? filters.countries.includes(trip.Country) : true) // Country filter
                 .filter(trip => filters.price > 0 ? Number(trip.Price) <= filters.price : true) // Price filter
+                .filter(trip => filters.type ? trip.Type.split(",").some(type => type === filters.type): true)
             if (query === "") {
                 return filteredTrips
             }
