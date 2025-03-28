@@ -26,15 +26,18 @@
 - [ ] Page d'accueil avancée
 - [x] Page de favoris
 - [ ] Page de voyage
-  - [ ] Carte
+  - [x] Carte
   - [ ] Commander le voyage
   - Description
   - ...
-- [ ] Filtres de recherche "type"
+  - [ ] Lieu le plus proche
+    - Mettre dans lien marathon
+- [x] Filtres de recherche "type"
 - [x] Scrapper description + heures vols + image**s**
 - [ ] Page marathon
   - Sélections des étapes du voyage
   - Algo glouton sur le temps de voyage
+  - Argument `endPlace`, pour avoir un départ / arrivée déjà setup
 - [ ] Page découverte (des plats làààà)
 
 
