@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         const [latitude, longitude] = trip.Location.split(",")
 
-        mapboxgl.accessToken = '';
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2FtYXJtLWRldiIsImEiOiJja3B6czl2bGowa2g2Mm5ycmdqMThhOHEzIn0.H-PjLIG_jQqZqvz3gPvjeQ';
         const map = new mapboxgl.Map({
             container: 'map',
             center: [Number(longitude), Number(latitude)], // Long, lat
