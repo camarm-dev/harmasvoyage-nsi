@@ -30,7 +30,7 @@ function getHTMLTrip(startPlace, endPlace, destinations) {
     rawHTML +=  `
       <div class="divider">
         <span></span>
-        <p>${startPlace.FlyTime} de vol</p>
+        <p>${startPlace.FlyTime}</p>
       </div>`
     for (const destination of destinations) {
         rawHTML += getHTMLTripStep(destination, false, false)
@@ -110,12 +110,30 @@ document.addEventListener("DOMContentLoaded", () => {
         destinations: []
     }
     const tripElement = document.getElementById("trip")
+    const addStepButton = document.getElementById("add")
+    const searchModal = document.getElementById("searchModal")
+    const closeModalButton = document.getElementById("close")
+    const searchForm = document.getElementById("search")
+    const searchbar = document.getElementById("query")
+    const resultsContainer = document.getElementById("results")
+
+    addStepButton.addEventListener("click", () => {
+        toggleModal()
+    })
+    closeModalButton.addEventListener("click", () => {
+        toggleModal()
+    })
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2FtYXJtLWRldiIsImEiOiJja3B6czl2bGowa2g2Mm5ycmdqMThhOHEzIn0.H-PjLIG_jQqZqvz3gPvjeQ';
     const map = new mapboxgl.Map({
         container: 'map',
         projection: 'globe',
         zoom: 3.5
     })
+
+    function toggleModal() {
+        searchModal.classList.toggle("is-active")
+    }
 
     function updateTrip() {
         if (!trip.startPlace && trip.destinations.length > 0) {
@@ -175,6 +193,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function addPlace(place) {
+        trip.destinations.push(place)
+    }
+
 
     loadData().then(data => {
         // Get start / end destination if provided
@@ -195,6 +217,49 @@ document.addEventListener("DOMContentLoaded", () => {
         map.on("load", () => {
             updateTrip()
         })
+
+        const filters = {
+            price: 0,
+            countries: [],
+            type: undefined
+        }
+        // Events and function requiring data
+        searchForm.onsubmit = () => {
+            const selectedDestinationsIds = [trip.startPlace, trip.endPlace, ...trip.destinations]
+                .filter(destination => destination) // TO remove undefined values
+                .map(destination => destination.Identifier)
+            const results = search(searchbar.value, data, filters)
+                .filter(destination => !selectedDestinationsIds.includes(destination.Identifier))
+            resultsContainer.innerHTML = ""
+            for (const destination of results) {
+                const resultElement = document.createElement("div")
+                resultElement.classList.add("result")
+                resultElement.innerHTML = `
+                  <img src="${destination.Images.split(',')[0]}" alt="">
+                  <div class="meta">
+                    <h4 class="title is-5">${destination.City}</h4>
+                    <p class="subtitle is-6">${destination.Country}</p>
+                  </div>
+                  <button class="button is-text">
+                    <span>Ajouter l'étape</span>
+                    <span class="icon">
+                      <i class="fas fa-chevron-right"></i>
+                    </span>
+                  </button>`
+                resultElement.addEventListener("click", () => {
+                    addPlace(destination)
+                    toggleModal()
+                    resultsContainer.innerHTML = ""
+                    searchbar.value = ""
+                    updateTrip()
+                })
+                resultsContainer.appendChild(resultElement)
+            }
+            if (results.length === 0) {
+                resultsContainer.innerHTML = "<p>Aucun résultat</p>"
+            }
+            return false
+        }
 
         // For testing purposes
         getShortestWay(paris, istanbul, checkpoints)
