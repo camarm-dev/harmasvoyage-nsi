@@ -82,3 +82,28 @@ function fillFlyTime(data, location) {
     }
     return data
 }
+
+function search(query, data, filters) {
+    query = query.toLowerCase()
+    const filteredTrips = data
+        .filter(trip => filters.countries.length > 0 ? filters.countries.includes(trip.Country) : true) // Country filter
+        .filter(trip => filters.price > 0 ? Number(trip.Price) <= filters.price : true) // Price filter
+        .filter(trip => filters.type ? trip.Type.split(",").some(type => type === filters.type): true)
+    if (query === "") {
+        return filteredTrips
+    }
+    const results = []
+    for (const row of filteredTrips) {
+        if (!row.Country) {
+            continue
+        }
+        if (
+            // Title and country search
+            (row.Country.toLowerCase().startsWith(query) || row.Country.toLowerCase().endsWith(query)
+                || row.City.toLowerCase().startsWith(query) || row.City.toLowerCase().endsWith(query))
+        ) {
+            results.push(row)
+        }
+    }
+    return results
+}
