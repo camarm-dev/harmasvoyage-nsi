@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const closestPlace = document.getElementById("closestPlace")
     const closestPlaceFlyTime = document.getElementById("closestPlaceFlyTime")
     const description = document.getElementById("description")
+    const marathonButton = document.getElementById("startMarathon")
 
     const likeButton = document.getElementById("like")
     likeButton.addEventListener("click", () => {
@@ -39,6 +40,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     loadData().then(data => {
         const trip = data.find(row => row.Identifier === tripId)
+
+        marathonButton.href = `marathon.html?startPlace=${trip.Identifier}`
 
         if (trip) {
             citiesElements.forEach(el => {
