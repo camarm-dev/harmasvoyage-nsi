@@ -44,12 +44,34 @@
       </div>
     </div>
 </nav>
+<div class="modal" id="searchModal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <h3 class="title is-4">Ajouter une étape</h3>
+      <h4 class="subtitle is-6">Recherche et ajoute une destination.</h4>
+      <form id="search">
+        <div class="searchbar">
+          <input id="query" name="query" placeholder="Rechercher un lieu" >
+          <button class="button is-primary is-gradient" type="submit">
+          <span class="icon">
+            <i class="fas fa-search"></i>
+          </span>
+          </button>
+        </div>
+      </form>
+      <div id="results">
+      </div>
+    </div>
+  </div>
+  <button id="close" class="modal-close is-large" aria-label="close"></button>
+</div>
 <section class="marathon">
   <aside>
     <h2 class="title is-4">Mon marathon</h2>
     <p>Choisis tes destinations, on calcule le périple le plus court !</p>
     <br>
-    <button class="button is-primary is-gradient is-fullwidth">Ajouter une étape</button>
+    <button id="add" class="button is-primary is-gradient is-fullwidth">Ajouter une étape</button>
     <br>
     <div id="trip"></div>
   </aside>
