@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         destinations: []
     }
     const tripElement = document.getElementById("trip")
-    mapboxgl.accessToken = '';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2FtYXJtLWRldiIsImEiOiJja3B6czl2bGowa2g2Mm5ycmdqMThhOHEzIn0.H-PjLIG_jQqZqvz3gPvjeQ';
     const map = new mapboxgl.Map({
         container: 'map',
         projection: 'globe',
@@ -175,35 +175,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-// getDistance([latitude, longitude], [...])
-// trip.Location "34.04000000,-4.6531000"
-// const location = "34.04000000,-4.6531000".split(",")
 
     loadData().then(data => {
-        // Get start destination if defined
+        // Get start / end destination if provided
         const startPlaceIdentifier = new URLSearchParams(location.search).get("startPlace")
         const startPlace = data.find(place => place.Identifier === startPlaceIdentifier)
+        const endPlaceIdentifier = new URLSearchParams(location.search).get("endPlace")
+        const endPlace = data.find(place => place.Identifier === endPlaceIdentifier)
+
+        trip.startPlace = startPlace
+        trip.endPlace = endPlace
+
         const paris = data.find(row => row.City === "Paris")
         const istanbul = data.find(row => row.City === "Istanbul")
         const checkpoints = data.filter(row => row.Country === "Italie")
-        trip.startPlace = startPlace
-        // trip.endPlace = istanbul
         // trip.destinations = checkpoints
-        updateTrip()
-        getShortestWay(paris, istanbul, checkpoints)
-    })
 
-    map.on("load", () => {
-        updateTrip()
+        // Fill trip timeline & add map markers
+        map.on("load", () => {
+            updateTrip()
+        })
+
+        // For testing purposes
+        getShortestWay(paris, istanbul, checkpoints)
     })
 })
 
-// Trouver le chemin le plus court de startPlace, à endPlaces, en passant par places
-function getShortestWay(startPlace, endPlace, places) {
-    const [startLatitude, startLongitude] = startPlace.Location.split(",")
-    for (const destination of places){
-        const [destinationLatitude, destinationLongitude] = destination.Location.split(",")
-        const distance = getDistance([Number(startLatitude), Number(startLongitude)],[Number(destinationLatitude),Number(destinationLongitude)])
-        console.log(distance)
-    }
-}
