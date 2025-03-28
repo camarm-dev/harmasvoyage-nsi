@@ -5,40 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harmas Voyage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://www.jsdelivr.com/package/npm/@creativebulma/bulma-divider">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/marathon.css"/>
     <link rel="icon" href="img/favicon.png"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
     <script src="js/data.js"></script>
     <script src="js/marathon.js"></script>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="img/logo.png" alt="LOGO">
-          </a>
-        </div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="img/logo.png" alt="LOGO">
+      </a>
+    </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-white">
-                  <span class="icon">
-                    <i class="fas fa-heart"></i>
-                  </span>
-                </a>
-                <a class="button is-light">
-                  <span class="icon">
-                    <i class="fas fa-user-circle"></i>
-                  </span>
-                  <span>Connexion</span>
-                </a>
-              </div>
-            </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-white">
+              <span class="icon">
+                <i class="fas fa-heart"></i>
+              </span>
+            </a>
+            <a class="button is-light">
+              <span class="icon">
+                <i class="fas fa-user-circle"></i>
+              </span>
+              <span>Connexion</span>
+            </a>
           </div>
         </div>
-    </nav>
+      </div>
+    </div>
+</nav>
+<section class="marathon">
+  <aside>
+    <h2 class="title is-4">Mon marathon</h2>
+    <p>Choisis tes destinations, on calcule le périple le plus court !</p>
+    <br>
+    <button class="button is-primary is-gradient is-fullwidth">Ajouter une étape</button>
+    <br>
+    <div id="trip">
+      <span class="step is-uppercase">Début du voyage</span>
+      <div class="item">
+        <img src="https://www.kayak.fr/rimg/dimg/8e/23/15037580-city-15957-162cf3395da.jpg?width=600&height=313&xhint=1566&yhint=1072&crop=true" alt="">
+        <div class="content">
+          <h4 class="title is-6">Porto</h4>
+          <p class="subtitle is-6">Portugal</p>
+        </div>
+        <div class="actions">
+          <button class="button is-light is-primary">
+            <span class="icon">
+              <i class="fas fa-flag-checkered"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="divider">
+        <span></span>
+        <p>2h de vol</p>
+      </div>
+      <span class="step is-uppercase">étape 1</span>
+      <div class="item">
+        <img src="https://www.kayak.fr/rimg/dimg/fe/69/7db19d20-city-1588-163d5ec6d89.jpg?width=600&height=313&xhint=1572&yhint=900&crop=true" alt="">
+        <div class="content">
+          <h4 class="title is-6">Marseille</h4>
+          <p class="subtitle is-6">France</p>
+        </div>
+        <div class="actions">
+          <button class="button is-light is-primary">
+            <span class="icon">
+              <i class="fas fa-flag"></i>
+            </span>
+          </button>
+          <button class="button is-light is-primary">
+            <span class="icon">
+              <i class="fas fa-flag-checkered"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="divider">
+        <span></span>
+        <p>11h50 de vol</p>
+      </div>
+      <span class="step is-uppercase">étape 2</span>
+      <div class="item">
+        <img src="https://www.kayak.fr/rimg/dimg/02/18/8904e548-city-19865-163cbc3a79e.jpg?width=600&height=313&xhint=1779&yhint=1269&crop=true" alt="">
+        <div class="content">
+          <h4 class="title is-6">Pragues</h4>
+          <p class="subtitle is-6">République Tchèque</p>
+        </div>
+        <div class="actions">
+          <button class="button is-light is-primary">
+            <span class="icon">
+              <i class="fas fa-flag"></i>
+            </span>
+          </button>
+          <button class="button is-light is-primary">
+            <span class="icon">
+              <i class="fas fa-flag-checkered"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <main>
+    <div id="map"></div>
+  </main>
+  <aside class="end">
+    <div class="fly">
+      <h2 class="title is-5">Total</h2>
+      <p class="subtitle is-6">Commander ce voyage</p>
+      <div class="is-flex is-justify-content-space-between mb-3">
+        <span>Temps</span>
+        <b id="flyTime">50h de vol</b>
+      </div>
+      <div class="is-flex is-justify-content-space-between mb-3">
+        <span>Prix</span>
+        <b id="price">1M€</b>
+      </div>
+      <button class="button is-fullwidth is-outline">Commander</button>
+    </div>
+  </aside>
+</section>
 </body>
 </html>
