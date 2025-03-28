@@ -108,35 +108,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     loadData().then(data => {
 
-        function search(query) {
-            query = query.toLowerCase()
-            const filters = getFilters()
-            const filteredTrips = data
-                .filter(trip => filters.countries.length > 0 ? filters.countries.includes(trip.Country) : true) // Country filter
-                .filter(trip => filters.price > 0 ? Number(trip.Price) <= filters.price : true) // Price filter
-                .filter(trip => filters.type ? trip.Type.split(",").some(type => type === filters.type): true)
-            if (query === "") {
-                return filteredTrips
-            }
-            const results = []
-            for (const row of filteredTrips) {
-                if (!row.Country) {
-                    continue
-                }
-                if (
-                    // Title and country search
-                    (row.Country.toLowerCase().startsWith(query) || row.Country.toLowerCase().endsWith(query)
-                        || row.City.toLowerCase().startsWith(query) || row.City.toLowerCase().endsWith(query))
-                ) {
-                    results.push(row)
-                }
-            }
-            return results
-        }
-
         function dynamicSearch(query) {
             resultsGrid.innerHTML = ""
-            const results = search(query.trim())
+            const results = search(query.trim(), data, getFilters())
             for (const place of results) {
                 insertPlace(place)
             }
