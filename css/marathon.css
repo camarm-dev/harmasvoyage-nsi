@@ -118,6 +118,61 @@
     height: 100%;
 }
 
+.modal .modal-content {
+    min-width: 600px;
+    min-height: 1000px;
+    max-height: 1500px;
+}
+
+.searchbar, .searchbar input {
+    background: var(--card);
+}
+
+.modal #results {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#results .result {
+    display: flex;
+    border-radius: 18px;
+    background: var(--card);
+    align-items: center;
+    padding-right: 1em;
+    cursor: pointer;
+}
+
+#results .result img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#results .result .meta {
+    margin-left: 1em;
+}
+
+#results .result .button {
+    margin-left: auto;
+    text-decoration: none !important;
+}
+
+#results .result .button:hover {
+    background: var(--card) !important;
+}
+
+#results .result:hover .button .icon {
+    transition: .2s ease-in-out;
+}
+
+#results .result:hover .button .icon {
+    transform: translate(20%);
+}
+
 @media (max-width: 1200px) {
     .marathon main {
         width: 75%;
