@@ -120,3 +120,46 @@ header .end .images img {
 .explain .subtitle {
     font-size: .9em;
 }
+
+footer {
+    border-top: .55px solid var(--card);
+    margin: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+footer h4 {
+    margin-bottom: .1em !important;
+}
+
+footer a {
+    color: var(--border) !important;
+    text-decoration: underline var(--border) !important;
+}
+
+footer a:hover {
+    color: var(--text) !important;
+    text-decoration: underline var(--card);
+}
+
+.footer-start {
+    padding-top: 2em;
+    /*gap: 2em;*/
+    justify-content: space-between;
+    padding-bottom: 2em;
+    margin-bottom: 2em !important;
+    border-bottom: .55px solid var(--card);
+}
+
+.footer-start, footer p.end {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.footer-start div {
+    flex: 1;
+}
+
+.has-text-light {
+    color: var(--border) !important;
+}
