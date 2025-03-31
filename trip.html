@@ -43,6 +43,96 @@
     </div>
   </div>
 </nav>
+<div class="modal is-active" id="checkout">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <h3 class="title is-4">Commander le voyage</h3>
+      <h4 class="subtitle is-6">Recherche et ajoute une destination.</h4>
+      <form id="buy">
+        <div class="label is-normal">
+          <label class="label">Coordonnées</label>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded has-icons-left">
+                <input class="input" type="text" placeholder="HARMAS ELIAS">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control is-expanded has-icons-left has-icons-right">
+                <input class="input" type="email" placeholder="elias@harmas.com">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="label is-normal">
+          <label class="label">Paiement</label>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded has-icons-left">
+                <input class="input" type="number" placeholder="0000 0000 0000 0000">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-bank"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field is-expanded">
+              <div class="field has-addons">
+                <p class="control is-expanded has-icons-left">
+                  <input class="input" type="text" placeholder="YY/MM">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-calendar"></i>
+                  </span>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input class="input" type="text" placeholder="CVC">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-hashtag"></i>
+                  </span>
+                </p>
+              </div>
+              <p class="help">On garde ça bien au chaud BG.</p>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox">
+              J'accepte les <a href="#" class="has-text-primary">termes et conditions</a>
+            </label>
+          </div>
+        </div>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary">Azy ça part</button>
+          </div>
+          <div class="control">
+            <button class="button is-primary is-light">Annuler</button>
+          </div>
+        </div>
+      </form>
+      <div id="results">
+      </div>
+    </div>
+  </div>
+  <button id="close" class="modal-close is-large" aria-label="close"></button>
+</div>
 <header>
   <a class="button is-text" href="#" onclick="window.history.back(); setTimeout(() => { location.href = '/search.html' }, 2000)">
     <span class="icon">
