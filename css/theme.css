@@ -22,6 +22,12 @@
     --like: #dc2828;
 }
 
+input {
+    --bulma-input-focus-h: var(--bulma-primary-h) !important;
+    --bulma-input-focus-s: var(--bulma-primary-s) !important;
+    --bulma-input-focus-l: var(--bulma-primary-l) !important;
+}
+
 .navbar, body {
     background: var(--background);
 }
@@ -111,4 +117,12 @@
 
 .navbar .navbar-brand img {
     height: 1.5rem;
+}
+
+.button.is-primary:not(.is-light) {
+    color: #fff;
+}
+
+.icon {
+    --bulma-input-icon-focus-color: var(--bulma-primary);
 }
