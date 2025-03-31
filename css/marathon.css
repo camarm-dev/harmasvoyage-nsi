@@ -19,7 +19,7 @@
 }
 
 .marathon aside.end {
-    padding: 1.5em 1.5em 0 1em;
+    padding: 1.5em 0 0 1em;
     border-left: .55px var(--card) solid;
     border-right: none;
 }
@@ -118,10 +118,8 @@
     height: 100%;
 }
 
-.modal .modal-content {
+.modal .modal-content .box {
     min-width: 600px;
-    min-height: 1000px;
-    max-height: 1500px;
 }
 
 .searchbar, .searchbar input {
