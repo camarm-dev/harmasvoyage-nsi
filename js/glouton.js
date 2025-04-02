@@ -16,7 +16,8 @@ function getClosestPlace(startPlace, places) {
 }
 
 // Trouver le chemin le plus court de startPlace, à endPlaces, en passant par places
-function getShortestWay(startPlace, endPlace, places) {
+function getShortestWay(startPlace, endPlace, steps) {
+    const places = [...steps]
     const trip = [startPlace]
     let depart = startPlace
     while (places.length !== 0){
