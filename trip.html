@@ -12,6 +12,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
   <script src="js/data.js"></script>
+  <script src="js/glouton.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/trip.js"></script>
 </head>
@@ -43,7 +44,7 @@
     </div>
   </div>
 </nav>
-<div class="modal is-active" id="checkout">
+<div class="modal" id="checkout">
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="box">
@@ -131,7 +132,7 @@
       </div>
     </div>
   </div>
-  <button id="close" class="modal-close is-large" aria-label="close"></button>
+  <button class="modal-close is-large checkout" aria-label="close"></button>
 </div>
 <header>
   <a class="button is-text" href="#" onclick="window.history.back(); setTimeout(() => { location.href = '/search.html' }, 2000)">
@@ -140,7 +141,7 @@
     </span>
     <span>Retour</span>
   </a>
-  <button class="button is-primary is-gradient">
+  <button class="button is-primary is-gradient checkout">
     Commander
   </button>
 </header>
@@ -176,7 +177,7 @@
             <span>Le moins cher</span>
             <b id="price"></b>
           </div>
-          <button class="button is-fullwidth is-primary is-gradient">En sah !?</button>
+          <button class="button is-fullwidth is-primary is-gradient checkout">En sah !?</button>
         </div>
         <div class="fly">
           <h2 class="title is-5">Marathon</h2>

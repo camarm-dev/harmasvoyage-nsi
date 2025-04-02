@@ -7,10 +7,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const image = document.getElementById("image")
     const flyTime = document.getElementById("flyTime")
     const price = document.getElementById("price")
-    const closestPlace = document.getElementById("closestPlace")
+    const checkoutModal = document.getElementById("checkout")
+    const closestPlaceName = document.getElementById("closestPlace")
     const closestPlaceFlyTime = document.getElementById("closestPlaceFlyTime")
     const description = document.getElementById("description")
     const marathonButton = document.getElementById("startMarathon")
+
+    document.querySelectorAll(".checkout").forEach(button => {
+        button.addEventListener(() => {
+            checkoutModal.classList.toggle('is-active')
+        })
+    }) 
 
     const likeButton = document.getElementById("like")
     likeButton.addEventListener("click", () => {
@@ -40,7 +47,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     loadData().then(data => {
         const trip = data.find(row => row.Identifier === tripId)
-
+        const closestPlace = getClosestPlace(trip, data.filter(row => !(row.Identifier === tripId)))
+        closestPlaceName.innerText = closestPlace.City
+        closestPlaceFlyTime.innerText = closestPlace.FlyTime
         marathonButton.href = `marathon.html?startPlace=${trip.Identifier}`
 
         if (trip) {
