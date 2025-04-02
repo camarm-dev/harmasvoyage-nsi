@@ -5,7 +5,7 @@ async function loadData() {
             header: true,
             download: true,
             complete: function(results) {
-                resolve(fillFlyTime(results.data, position))
+                resolve(fillFlyTime(results.data, position).filter(trip => trip.Location))
             },
             error: function(error) {
                 console.error('Error parsing CSV:', error);
