@@ -22,7 +22,7 @@ function getShortestWay(startPlace, endPlace, steps) {
     let depart = startPlace
     while (places.length !== 0){
         depart = getClosestPlace(depart, places)
-        const targetIndex = places.findIndex(el => el.Identifer === depart.Identifier)
+        const targetIndex = places.findIndex(el => el.Identifier === depart.Identifier)
         places.splice(targetIndex, 1)
         trip.push(depart)
     }
