@@ -64,6 +64,14 @@ const getDistance = (position1, position2) => {
     return 2 * EARTH_RADIUS * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
+function getFlyTime(distance) {
+    let time = 30 // In minutes
+    time += (distance / AVERAGE_FLY_SPEED) * 60
+    const hours = Math.floor(time / 60)
+    const minutes = Math.round(time - hours * 60)
+    return `${hours}h${minutes.toString().padStart(2, "0")} de vol`
+}
+
 function fillFlyTime(data, location) {
     // Average commercial fly speed is 500mph => 804km/h
     // We add 30 minutes for take off / landing
@@ -72,13 +80,9 @@ function fillFlyTime(data, location) {
             trip.FlyTime = "5h de vol"
             continue
         }
-        let time = 30 // In minutes
         const [latitude, longitude] = trip.Location.split(",")
         const distance = getDistance(location, [Number(latitude), Number(longitude)])
-        time += (distance / AVERAGE_FLY_SPEED) * 60
-        const hours = Math.floor(time / 60)
-        const minutes = Math.round(time - hours * 60)
-        trip.FlyTime = `${hours}h${minutes.toString().padStart(2, "0")} de vol`
+        trip.FlyTime = getFlyTime(distance)
     }
     return data
 }
