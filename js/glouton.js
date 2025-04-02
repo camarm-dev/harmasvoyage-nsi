@@ -24,8 +24,7 @@ function getShortestWay(startPlace, endPlace, steps) {
     let depart = startPlace
     while (places.length !== 0) {
         const {destination_plus_proche, plus_petite_distance} = getClosestPlace(depart, places)
-        depart = destination_plus_proche
-        depart.FlyTime = getFlyTime(plus_petite_distance)
+ 
         const targetIndex = places.findIndex(el => el.Identifier === depart.Identifier)
         places.splice(targetIndex, 1)
         trip.push(depart)
