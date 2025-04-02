@@ -50,3 +50,6 @@
 - Remplir les descriptions
 - Refaire tri / Min / max ??
 -[x] Remplir descriptions, plats ect avec des IA (utiliser une API)
+
+
+MARATHON : ARRIV2E EN OPTION PTN DE DERMS
