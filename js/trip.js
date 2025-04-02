@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const marathonButton = document.getElementById("startMarathon")
 
     document.querySelectorAll(".checkout").forEach(button => {
-        button.addEventListener(() => {
+        button.addEventListener("click", () => {
             checkoutModal.classList.toggle('is-active')
         })
     }) 
