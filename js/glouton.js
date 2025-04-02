@@ -15,7 +15,6 @@ function getClosestPlace(startPlace, places) {
         destination_plus_proche,
         plus_petite_distance
     }
-    
 }
 
 // Trouver le chemin le plus court de startPlace, à endPlaces, en passant par places

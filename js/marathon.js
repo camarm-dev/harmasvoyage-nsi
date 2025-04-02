@@ -27,20 +27,20 @@ function getHTMLTripStep(step, start, end) {
 function getHTMLTrip(startPlace, endPlace, destinations) {
     let rawHTML = ""
     rawHTML += getHTMLTripStep(startPlace, true, false)
-    rawHTML +=  `
-      <div class="divider">
-        <span></span>
-        <p>${startPlace.FlyTime}</p>
-      </div>`
     for (const destination of destinations) {
-        rawHTML += getHTMLTripStep(destination, false, false)
         rawHTML +=  `
-          <div class="divider">
-            <span></span>
-            <p>${destination.FlyTime}</p>
-          </div>`
+        <div class="divider">
+        <span></span>
+        <p>${destination.FlyTime}</p>
+        </div>`
+        rawHTML += getHTMLTripStep(destination, false, false)
     }
     if (endPlace) {
+        rawHTML +=  `
+        <div class="divider">
+            <span></span>
+            <p>${endPlace.FlyTime}</p>
+        </div>`
         rawHTML += getHTMLTripStep(endPlace, false, true)
     }
     return rawHTML
@@ -145,7 +145,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!trip.startPlace) {
             tripElement.innerHTML = "<p class='content'>Pas d'étape ajoutée.</p>"
         }
-        tripElement.innerHTML = getHTMLTrip(trip.startPlace, trip.endPlace, trip.destinations)
+        // Check if functionnal
+        const places = getShortestWay(trip.startPlace, trip.endPlace, trip.destinations)
+        const startPlace = places.shift()
+        const endPlace = places.pop()
+        tripElement.innerHTML = getHTMLTrip(startPlace, endPlace, places)
         const actionsButtons = tripElement.querySelectorAll(".actions button")
         for (const button of actionsButtons) {
             button.addEventListener("click", () => {
@@ -160,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateTrip()
             })
         }
-        updateMap(map, trip.startPlace, trip.endPlace, trip.destinations)
+        updateMap(map, startPlace, endPlace, places)
     }
 
     function setStartPlace(place) {
@@ -207,11 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         trip.startPlace = startPlace
         trip.endPlace = endPlace
-
-        const paris = data.find(row => row.City === "Paris")
-        const istanbul = data.find(row => row.City === "Istanbul")
-        const checkpoints = data.filter(row => row.Country === "Italie")
-        // trip.destinations = checkpoints
 
         // Fill trip timeline & add map markers
         map.on("load", () => {
@@ -260,9 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return false
         }
-
-        // For testing purposes
-        getShortestWay(paris, istanbul, checkpoints)
     })
 })
 
