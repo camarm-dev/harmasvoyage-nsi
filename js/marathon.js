@@ -71,7 +71,9 @@ function getSource(startPlace, endPlace, steps) {
         lines.push(getGeoJSONLine(lastStep, step))
         lastStep = step
     }
-    lines.push(getGeoJSONLine(lastStep, endPlace))
+    if (endPlace) {
+        lines.push(getGeoJSONLine(lastStep, endPlace))
+    }
     return {
         'type': 'geojson',
         'data': {
@@ -103,6 +105,14 @@ function updateMap(map, startPlace, endPlace, destinations) {
     }
 }
 
+/*
+ 1h20 -> 80 (minutes)
+ */
+function decodeFlyTime(flyTime) {
+    const [hours, minutes] = flyTime.split(" ")[0].split("h")
+    return Number(hours) * 60 + Number(minutes)
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const trip = {
         startPlace: undefined,
@@ -116,6 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchForm = document.getElementById("search")
     const searchbar = document.getElementById("query")
     const resultsContainer = document.getElementById("results")
+    const priceLabel = document.getElementById("price")
+    const totalFlyTimeLabel = document.getElementById("flyTime")
 
     addStepButton.addEventListener("click", () => {
         toggleModal()
@@ -139,23 +151,23 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!trip.startPlace && trip.destinations.length > 0) {
             trip.startPlace = trip.destinations.shift()
         }
-        if (!trip.endPlace && trip.destinations.length > 0) {
-            trip.endPlace = trip.destinations.pop()
-        }
+        // if (!trip.endPlace && trip.destinations.length > 0) {
+        //     trip.endPlace = trip.destinations.pop()
+        // }
         if (!trip.startPlace) {
             tripElement.innerHTML = "<p class='content'>Pas d'étape ajoutée.</p>"
         }
         // Check if functionnal
         const places = getShortestWay(trip.startPlace, trip.endPlace, trip.destinations)
         const startPlace = places.shift()
-        const endPlace = places.pop()
+        const endPlace = trip.endPlace ? places.pop() : undefined
         tripElement.innerHTML = getHTMLTrip(startPlace, endPlace, places)
         const actionsButtons = tripElement.querySelectorAll(".actions button")
         for (const button of actionsButtons) {
             button.addEventListener("click", () => {
                 const action = button.dataset.action
                 const allTrips = [trip.startPlace, trip.endPlace, ...trip.destinations]
-                const destination = allTrips.find(destination => destination.Identifier === button.dataset.trip)
+                const destination = allTrips.find(destination => destination?.Identifier === button.dataset.trip)
                 if (action === "setStart") {
                     setStartPlace(destination)
                 } else {
@@ -164,6 +176,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateTrip()
             })
         }
+
+        const allPlaces = [startPlace, endPlace, ...places]
+            .filter(trip => trip) // Remove undefined values
+
+        const totalPrice = allPlaces
+            .reduce((total, trip) => total + Number(trip.Price), 0)
+        priceLabel.innerText = totalPrice + "€"
+
+        const totalFlyTime = allPlaces
+            .reduce((total, trip) => total + decodeFlyTime(trip.FlyTime), 0)
+        totalFlyTimeLabel.innerText = getReadableFlyTime(totalFlyTime)
+
         updateMap(map, startPlace, endPlace, places)
     }
 
@@ -183,7 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function setEndPlace(place) {
-        trip.destinations.push(trip.endPlace)
+        if (trip.endPlace)
+            trip.destinations.push(trip.endPlace)
         const targetIndex = trip.destinations.findIndex(el => el.Identifier === place.Identifier)
         trip.endPlace = place
 
@@ -208,8 +233,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const startPlace = data.find(place => place.Identifier === startPlaceIdentifier)
         const endPlaceIdentifier = new URLSearchParams(location.search).get("endPlace")
         const endPlace = data.find(place => place.Identifier === endPlaceIdentifier)
+        const firstStep = getClosestPlace(startPlace, data.filter(trip => trip.Identifier !== startPlace.Identifier))
 
         trip.startPlace = startPlace
+        trip.destinations = [firstStep]
         trip.endPlace = endPlace
 
         // Fill trip timeline & add map markers
