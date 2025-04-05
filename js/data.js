@@ -64,12 +64,16 @@ const getDistance = (position1, position2) => {
     return 2 * EARTH_RADIUS * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
-function getFlyTime(distance) {
-    let time = 30 // In minutes
-    time += (distance / AVERAGE_FLY_SPEED) * 60
+function getReadableFlyTime(time) {
     const hours = Math.floor(time / 60)
     const minutes = Math.round(time - hours * 60)
     return `${hours}h${minutes.toString().padStart(2, "0")} de vol`
+}
+
+function getFlyTime(distance) {
+    let time = 30 // In minutes
+    time += (distance / AVERAGE_FLY_SPEED) * 60
+    return getReadableFlyTime(time)
 }
 
 function fillFlyTime(data, location) {
