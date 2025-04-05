@@ -25,20 +25,20 @@
 - [x] Page de recherche simple
 - [ ] Page d'accueil avancée
 - [x] Page de favoris
-- [ ] Page de voyage
+- [x] Page de voyage
   - [x] Carte
-  - [ ] Commander le voyage
+  - [x] Commander le voyage
   - Description
   - ...
-  - [ ] Lieu le plus proche
+  - [x] Lieu le plus proche
     - Mettre dans lien marathon
 - [x] Filtres de recherche "type"
 - [x] Scrapper description + heures vols + image**s**
-- [ ] Page marathon
+- [x] Page marathon
   - Sélections des étapes du voyage
   - Algo glouton sur le temps de voyage
   - Argument `endPlace`, pour avoir un départ / arrivée déjà setup
-- [ ] Page découverte (des plats làààà)
+- [x] Page découverte (des plats làààà)
 
 
 ### Pour Gab et Elias
@@ -53,3 +53,9 @@
 
 
 MARATHON : ARRIV2E EN OPTION PTN DE DERMS
+
+
+
+---- 
+
+ON A TOUT FINI
