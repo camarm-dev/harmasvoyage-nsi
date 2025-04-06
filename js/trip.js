@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const closestPlaceFlyTime = document.getElementById("closestPlaceFlyTime")
     const description = document.getElementById("description")
     const marathonButton = document.getElementById("startMarathon")
+    const payButton = document.getElementById("payButton")
 
     document.querySelectorAll(".checkout").forEach(button => {
         button.addEventListener("click", () => {
             checkoutModal.classList.toggle('is-active')
         })
-    }) 
+    })
 
     const likeButton = document.getElementById("like")
     likeButton.addEventListener("click", () => {
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         closestPlaceName.innerText = closestPlace.City
         closestPlaceFlyTime.innerText = closestPlace.FlyTime
         marathonButton.href = `marathon.html?startPlace=${trip.Identifier}`
+        payButton.href = "https://paypal.me/EliasHarmas/" + trip.Price
 
         if (trip) {
             citiesElements.forEach(el => {

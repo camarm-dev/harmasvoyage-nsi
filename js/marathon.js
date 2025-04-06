@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchbar = document.getElementById("query")
     const resultsContainer = document.getElementById("results")
     const priceLabel = document.getElementById("price")
+    const payButton = document.getElementById("payButton")
     const totalFlyTimeLabel = document.getElementById("flyTime")
 
     addStepButton.addEventListener("click", () => {
@@ -183,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalPrice = allPlaces
             .reduce((total, trip) => total + Number(trip.Price), 0)
         priceLabel.innerText = totalPrice + "€"
+        payButton.href = "https://paypal.me/EliasHarmas/" + totalPrice
 
         const totalFlyTime = allPlaces
             .reduce((total, trip) => total + decodeFlyTime(trip.FlyTime), 0)
