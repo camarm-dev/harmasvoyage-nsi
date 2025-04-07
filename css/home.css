@@ -165,3 +165,33 @@ footer a:hover {
 .has-text-light {
     color: var(--border) !important;
 }
+
+.cookies {
+    width: 400px;
+    height: max-content;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    scale: 1;
+    z-index: 10000000;
+}
+
+.cookies .box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1em 1.5em !important;
+}
+
+.cookies .subtitle, .cookies p {
+    margin-bottom: 1em;
+}
+
+.cookies .buttons {
+    display: flex;
+    width: 100%;
+}
+
+.cookies .buttons .button {
+    flex: 1;
+}

@@ -101,6 +101,17 @@
         <p class="subtitle">Tout le monde aime HARMAS VOYAGES.</p>
       </div>
     </section>
+    <div class="cookies">
+      <div class="box">
+        <h2 class="title is-4">Accepter les cookies</h2>
+        <h4 class="subtitle">Elias a besoin d'argent</h4>
+        <p>Elias a acheté un Samsung Galaxy A35 pour le travail. Merci d'accepter les cookies pour rembourser cet achat (ou faites lui un paypal).</p>
+        <div class="buttons">
+          <a id="acceptCookies" href="https://www.paypal.com/paypalme/EliasHarmas" target="_blank" class="button is-primary is-gradient">Accepter</a>
+          <a id="declineCookies" href="#" class="button is-outlined is-primary">Refuser</a>
+        </div>
+      </div>
+    </div>
     <footer>
       <div class="is-flex footer-start">
         <div class="is-flex is-flex-direction-column">
@@ -132,5 +143,36 @@
         &copy; HARMAS VOYAGES
       </p>
     </footer>
+    <script>
+      const cookiesBox = document.querySelector(".cookies")
+      const acceptCookiesButton = document.getElementById("acceptCookies")
+      const declineCookiesButton = document.getElementById("declineCookies")
+
+      cookiesBox.style.scale = 1
+
+      acceptCookiesButton.addEventListener("click", () => {
+        cookiesBox.style.display = "none"
+      })
+
+      declineCookiesButton.addEventListener("click", (event) => {
+        cookiesBox.style.scale = Number(cookiesBox.style.scale) + 0.05
+        const style = getComputedStyle(cookiesBox)
+        const windowHeight = Number(getComputedStyle(document.body).height.slice(0, -2))
+        const width = Number(style.width.slice(0, -2))
+        const height = Number(style.height.slice(0, -2))
+        let styleLeft = window.innerWidth * Math.random()
+        let styleBottom = windowHeight * Math.random()
+        while (styleLeft + width >= window.innerWidth || styleLeft <= 0) {
+          styleLeft = window.innerWidth * Math.random()
+        }
+        while (styleBottom + 2*height >= windowHeight) {
+          styleBottom = windowHeight * Math.random()
+        }
+        //cookiesBox.style.left = event.clientX - width - event.layerX + "px"
+        //cookiesBox.style.bottom = event.clientY - height - event.layerY + "px"
+        cookiesBox.style.left = styleLeft + "px"
+        cookiesBox.style.bottom = styleBottom + "px"
+      })
+    </script>
 </body>
 </html>

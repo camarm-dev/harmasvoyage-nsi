@@ -41,6 +41,10 @@ input {
     background: var(--active-background) !important;
 }
 
+.button.is-primary.is-outlined {
+    color: var(--bulma-primary) !important;
+}
+
 .searchbar {
     padding-right: .5em;
     background: var(--background);
