@@ -1,7 +1,7 @@
 function getHTMLTripStep(step, start, end) {
     return `
     ${start ? '<span class="step is-uppercase">Début du voyage</span>' : end ? '<span class="step is-uppercase">Fin du voyage</span>' : ''}
-    <div class="item">
+    <div class="item" data-trip="${step.Identifier}">
       <img src="${step.Images.split(',')[0]}" alt="Image de ${step.City}">
       <div class="content">
         <h4 class="title is-6">${step.City}</h4>
@@ -163,11 +163,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const startPlace = places.shift()
         const endPlace = trip.endPlace ? places.pop() : undefined
         tripElement.innerHTML = getHTMLTrip(startPlace, endPlace, places)
+        const items = tripElement.querySelectorAll(".item")
+        const allTrips = [trip.startPlace, trip.endPlace, ...trip.destinations]
+        for (const item of items) {
+            item.addEventListener("click", () => {
+                const doDelete = confirm("supprimer cette étape ?")
+                const destination = allTrips.find(destination => destination?.Identifier === item.dataset.trip)
+                if (doDelete) {
+                    removePlace(destination)
+                }
+                updateTrip()
+            })
+        }
         const actionsButtons = tripElement.querySelectorAll(".actions button")
         for (const button of actionsButtons) {
             button.addEventListener("click", () => {
                 const action = button.dataset.action
-                const allTrips = [trip.startPlace, trip.endPlace, ...trip.destinations]
                 const destination = allTrips.find(destination => destination?.Identifier === button.dataset.trip)
                 if (action === "setStart") {
                     setStartPlace(destination)
@@ -191,6 +202,20 @@ document.addEventListener("DOMContentLoaded", () => {
         totalFlyTimeLabel.innerText = getReadableFlyTime(totalFlyTime)
 
         updateMap(map, startPlace, endPlace, places)
+    }
+
+    function removePlace(place) {
+        if (trip.startPlace.Identifier == place.Identifier) {
+            trip.startPlace = undefined
+            setStartPlace(trip.destinations(shift))
+            return
+        }
+        if (trip.endPlace?.Identifier == place.Identifier) {
+            trip.endPlace = undefined
+            return
+        }
+        const targetIndex = trip.destinations.findIndex(el => el.Identifier === place.Identifier)
+        trip.destinations.splice(targetIndex, 1)
     }
 
     function setStartPlace(place) {
