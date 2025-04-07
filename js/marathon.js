@@ -235,10 +235,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const startPlace = data.find(place => place.Identifier === startPlaceIdentifier)
         const endPlaceIdentifier = new URLSearchParams(location.search).get("endPlace")
         const endPlace = data.find(place => place.Identifier === endPlaceIdentifier)
-        const firstStep = getClosestPlace(startPlace, data.filter(trip => trip.Identifier !== startPlace.Identifier))
 
         trip.startPlace = startPlace
-        trip.destinations = [firstStep]
+        if (startPlace) {
+            const firstStep = getClosestPlace(startPlace, data.filter(trip => trip.Identifier !== startPlace.Identifier))
+            trip.destinations = [firstStep]
+        }
         trip.endPlace = endPlace
 
         // Fill trip timeline & add map markers
