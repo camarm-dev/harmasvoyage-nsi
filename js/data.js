@@ -1,7 +1,7 @@
 async function loadData() {
     const position = await getLocation()
     return await new Promise((resolve, reject) => {
-        Papa.parse("/data.csv", {
+        Papa.parse("../data.csv", {
             header: true,
             download: true,
             complete: function(results) {
