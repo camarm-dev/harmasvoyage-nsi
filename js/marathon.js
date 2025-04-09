@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const allTrips = [trip.startPlace, trip.endPlace, ...trip.destinations]
         for (const item of items) {
             item.addEventListener("click", () => {
-                const doDelete = confirm("supprimer cette étape ?")
+                const doDelete = confirm("Supprimer cette étape ?")
                 const destination = allTrips.find(destination => destination?.Identifier === item.dataset.trip)
                 if (doDelete) {
                     removePlace(destination)
