@@ -89,15 +89,15 @@
     </header>
     <section class="section landing">
       <div class="explain">
-        <h3 class="title is-5">Dépense sans compter</h3>
+        <h3 class="title is-5">Dépense <span class="highlight">sans compter</span></h3>
         <p class="subtitle">Des voyages en sah gratuits.</p>
       </div>
       <div class="explain">
-        <h3 class="title is-5">Notre expertise pour vos envies</h3>
+        <h3 class="title is-5">Notre <span class="highlight">expertise</span> pour vos envies</h3>
         <p class="subtitle">Avec Marathon™, dis nous où tu veux aller, et on calcule le meilleure périple pour toi !</p>
       </div>
       <div class="explain">
-        <h3 class="title is-5">100% de voyageurs statisfaits</h3>
+        <h3 class="title is-5">100% de voyageurs <span class="highlight">statisfaits</span></h3>
         <p class="subtitle">Tout le monde aime HARMAS VOYAGES.</p>
       </div>
     </section>
@@ -143,10 +143,25 @@
         &copy; HARMAS VOYAGES
       </p>
     </footer>
+    <div class="modal" id="memeModal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <figure class="image">
+            <img src="" alt="MEME" id="meme" style="border-radius: 6px;">
+          </figure>
+        </div>
+      </div>
+      <button class="modal-close is-large" id="closeMemeModal" aria-label="close"></button>
+    </div>
     <script>
       const cookiesBox = document.querySelector(".cookies")
       const acceptCookiesButton = document.getElementById("acceptCookies")
       const declineCookiesButton = document.getElementById("declineCookies")
+      const highlightedTexts = document.querySelectorAll('.highlight')
+      const memeModal = document.getElementById("memeModal")
+      const memeImage = document.getElementById("meme")
+      const closeModal = document.getElementById("closeMemeModal")
 
       cookiesBox.style.scale = 1
 
@@ -162,16 +177,36 @@
         const height = Number(style.height.slice(0, -2))
         let styleLeft = window.innerWidth * Math.random()
         let styleBottom = windowHeight * Math.random()
-        while (styleLeft + width >= window.innerWidth || styleLeft <= 0) {
+        while (styleLeft + width >= window.innerWidth) {
           styleLeft = window.innerWidth * Math.random()
         }
-        while (styleBottom + 2*height >= windowHeight) {
+        while (styleBottom + 2 * height >= windowHeight) {
           styleBottom = windowHeight * Math.random()
         }
         //cookiesBox.style.left = event.clientX - width - event.layerX + "px"
         //cookiesBox.style.bottom = event.clientY - height - event.layerY + "px"
         cookiesBox.style.left = styleLeft + "px"
         cookiesBox.style.bottom = styleBottom + "px"
+      })
+
+      const memes = [
+        "/img/meme.jpg",
+        "/img/trump.jpg",
+        "/img/willsmith.jpg",
+        "/img/yoda.jpg",
+        "/img/zebi.jpg"
+      ]
+
+      for (const element of highlightedTexts) {
+        element.addEventListener("click", () => {
+            const randomMeme = memes[Math.round(Math.random() * memes.length)]
+            memeModal.classList.add("is-active")
+            memeImage.src = randomMeme
+        })
+      }
+
+      closeModal.addEventListener("click", () => {
+        memeModal.classList.remove("is-active")
       })
     </script>
 </body>
