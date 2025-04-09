@@ -20,6 +20,8 @@
     --bulma-primary-s: 100%;
     --bulma-primary-l: 48%;
     --like: #dc2828;
+    --highlight: #f4550020;
+    --highlight-text: #e75202;
 }
 
 input {
@@ -129,4 +131,11 @@ input {
 
 .icon {
     --bulma-input-icon-focus-color: var(--bulma-primary);
+}
+
+.highlight {
+    background-color: var(--highlight);
+    color: var(--highlight-text);
+    padding: .01em .2em;
+    cursor: pointer;
 }
