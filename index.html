@@ -194,12 +194,19 @@
         "/img/trump.jpg",
         "/img/willsmith.jpg",
         "/img/yoda.jpg",
-        "/img/zebi.jpg"
+        "/img/zebi.jpg",
+        "/img/dead.jpg",
+        "/img/kheys.jpg",
+        "/img/harmas.jpg",
+        "/img/price.jpg",
+        "/img/love.jpg",
+        "/img/squidgame.jpg",
+        "/img/cat.jpg"
       ]
 
       for (const element of highlightedTexts) {
         element.addEventListener("click", () => {
-            const randomMeme = memes[Math.round(Math.random() * memes.length)]
+            const randomMeme = memes[Math.floor(Math.random() * memes.length)]
             memeModal.classList.add("is-active")
             memeImage.src = randomMeme
         })
