@@ -177,7 +177,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const actionsButtons = tripElement.querySelectorAll(".actions button")
         for (const button of actionsButtons) {
-            button.addEventListener("click", () => {
+            button.addEventListener("click", (event) => {
+                event.preventDefault()
                 const action = button.dataset.action
                 const destination = allTrips.find(destination => destination?.Identifier === button.dataset.trip)
                 if (action === "setStart") {
